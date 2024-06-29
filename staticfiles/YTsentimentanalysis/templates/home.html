@@ -1,0 +1,408 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css.css' %}">
+
+</head>
+
+
+
+
+<body>
+
+    <div class="menuecontainer">
+
+        <div class="menue">
+            <div class="logoimage"></div>
+            <div class="logo"></div>
+            <div class="dashboard"><a href="#dashboard" style="text-decoration: none; color: inherit;">Dashboard</a>
+            </div>
+            <div class="analytics"><a href="#analytics" style="text-decoration: none; color: inherit;">Analytics</a>
+            </div>
+            <div class="about"><a href="#about" style="text-decoration: none; color: inherit;">About</a></div>
+
+            <form method="post" action="{% url 'signup' %}">
+                {% csrf_token %}
+                <button class="signup" type="submit">Sign Up</button>
+            </form>
+
+            {% if show_container1 %}
+            <input type="checkbox" id="signupCheckbox">
+            <label for="signupCheckbox" class="overlay"></label>
+            <div class="signupcont">
+                <h2>Sign Up</h2>
+                <div class="email">
+                    <label for="email">Email</label><br>
+                </div>
+                <input type="email" id="email" name="email"><br><br>
+                <div class="password">
+                    <label for="password">Password</label><br>
+                </div>
+                <input type="password" id="password" name="password"><br><br>
+                <button class="signupbutton">Sign Up</button>
+                <hr>or
+                <hr>
+                <button class="signupgoogle">Sign up with Google</button>
+                <label for="signupCheckbox" class="close-button">&times;</label>
+            </div>
+            {% endif %}
+
+            <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                <button class="login" type="submit">Log In</button>
+            </form>
+
+            {% if show_container2 %}
+            <input type="checkbox" id="loginCheckbox">
+            <label for="loginCheckbox" class="overlay"></label>
+            <div class="logincont">
+                <h2>Log In</h2>
+                <div class="email">
+                    <label for="login_email">Email</label><br>
+                </div>
+                <input type="email" id="login_email" name="email"><br><br>
+                <div class="password">
+                    <label for="login_password">Password</label><br>
+                </div>
+                <input type="password" id="login_password" name="password"><br><br>
+                <button class="loginbutton">Log In</button>
+                <hr>or
+                <hr>
+                <button class="logingoogle">Log In with Google</button>
+                <label for="loginCheckbox" class="close-button">&times;</label>
+            </div>
+            {% endif %}
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+
+    <div class="wholepage">
+        <section id="dashboard">
+
+            <div class="container">
+                <div class="largeheading">
+                    <h2>Diving into the Sea of Voices: Decode the Emotions Embedded in YouTube Comments with our
+                        Sentiment
+                        Analysis Tool </h2>
+                </div>
+
+                <div class="smallheading">
+                    <h5>Our Sentiment Analysis Tool relies on the BERT Small Model, carefully trained to decipher
+                        the
+                        sentiments in YouTube comments. Although BERT excels in understanding context, it does
+                        demand
+                        more computer power. Rest assured, we've worked to make your analysis experience smooth and
+                        efficient. Our model has achieved an impressive 87% accuracy, making it highly effective at
+                        predicting positive, negative, and neutral sentiments.</h5>
+
+                </div>
+                <div class="input-container">
+                    <div class="linkpasting">
+
+                        <form id="videolinkForm" method="post" action="{% url 'videolinkandlangdetect' %}">
+                            {% csrf_token %}
+                            <input type="text" name="link" placeholder="Paste your link here">
+                    </div>
+                    <button id="pitchButton" class="performbutton" type="submit" name="perform">Pitch</button>
+
+                    </form>
+
+                </div>
+
+
+                <script>
+                    document.getElementById('pitchButton').onclick = function () {
+                        document.getElementById('progressbarmessage').style.display = 'block';
+                        var progressContainer = document.getElementById('progressContainer');
+                        if (progressContainer) {
+                            progressContainer.style.display = 'block';
+                        }
+                    };
+
+                </script>
+
+                {%if not available and not invalidlink and not nolink and not notavailable%}
+                <div class="progress-container" id="progressContainer" style="display: none;">
+                    <div class="progress-bar"></div>
+                </div>
+                {%endif%}
+                <div class="progress-container2" style="display: none;">
+                    <div class="progress-bar2"></div>
+                </div>
+
+
+
+
+
+                <div class="mainmessages">
+                    {% if messages %}
+                    {% for message in messages %}
+                    <p style="color: red;">{{message}}</p>
+                    {% endfor %}
+                    {% endif %}
+
+                    <p style="color: rgb(29, 233, 39);">{{available}}</p>
+                    <p style="color: red;">{{notavailable}}</p>
+                    <p style="color: rgb(29, 233, 39);">{{english_comments_available}}</p>
+                    <p style="color: red;">{{english_comments_notavailable}}</p>
+
+
+                    {% if piechart %}
+                    {% if pos > neg and pos > neut %}
+                    <p style="color: rgb(29, 233, 39); font-size: 24px;">Your Video is Positive</p>
+                    {% elif neg > pos and neg > neut %}
+                    <p style="color: rgb(255, 0, 0); font-size: 24px;">Your Video is Negative</p>
+                    {% elif neut > pos and neut > neg %}
+                    <p style="color: rgb(222, 245, 9); font-size: 24px;">Your Video is Neutral</p>
+                    {%else%}
+                    <p style="color: rgb(14, 111, 237); font-size: 24px;">Your Video has Mixed Sentiments</p>
+                    {% endif %}
+                    {%endif%}
+
+                </div>
+
+
+
+                {%if available%}
+
+                <div class="container2">
+                    <form method="post" action="{% url 'viewcomments' %}">
+                        {% csrf_token %}
+
+
+                        <button class="commentsbutton" type="submit" name="view-comments">All Comments</button>
+
+                    </form>
+
+                    <form method="post" action="{% url 'viewenglishcomments' %}">
+                        {% csrf_token %}
+                        <button class="englishbutton" type="submit" name="english-comments">English
+                            Comments</button>
+
+                    </form>
+
+                    <form method="post" action="{% url 'piechart' %}">
+                        {% csrf_token %}
+                        <!-- Add a button to trigger the pie chart generation -->
+                        <button id="sentimentbutton" class="piebutton" type="submit" name="piechartbutton">Sentiment
+                            Analysis</button>
+                    </form>
+                </div>
+
+                {%endif%}
+
+
+                <script>
+                    document.getElementById('sentimentbutton').onclick = function () {
+                        document.getElementById('sentimentmessage').style.display = 'block';
+                        var progressContainer2 = document.querySelector('.progress-container2');
+                        if (progressContainer2) {
+                            progressContainer2.style.display = 'block';
+                        }
+                    };
+
+                    window.addEventListener('pageshow', function (event) {
+                        if (event.persisted) {
+                            // Hide the sentiment message and progress bar when navigating back
+                            document.getElementById('sentimentmessage').style.display = 'none';
+                            var progressContainer2 = document.querySelector('.progress-container2');
+                            if (progressContainer2) {
+                                progressContainer2.style.display = 'none';
+                            }
+                        }
+                    });
+                </script>
+            </div>
+
+
+
+
+
+
+        </section>
+
+        <section id="analytics">
+            <div class="all">
+
+
+                <div class="row">
+                    <div class="green">
+                        <div class="positive">
+                            <div class="heading1" style="color: green;">Positive Comments</div>
+                            <div class="textcontainer">
+                                <div class="text1">{{pos}}</div>
+                            </div>
+                            <div class="emojie1"></div>
+
+                        </div>
+                    </div>
+                    <div class="yellow">
+                        <div class="neutral">
+                            <div class="heading2" style="color:rgb(241, 238, 25);">Neutral Comments</div>
+                            <div class="textcontainer">
+                                <div class="text2">{{neut}}</div>
+                            </div>
+                            <div class="emojie2"></div>
+
+                        </div>
+                    </div>
+                    <div class="red">
+                        <div class="negetive">
+                            <div class="heading3" style="color: rgb(235, 13, 31);">Negetive Comments</div>
+                            <div class="textcontainer">
+                                <div class="text3">{{neg}}</div>
+                            </div>
+                            <div class="emojie3"></div>
+
+                        </div>
+                    </div>
+                    <div class="blue">
+                        <div class="total">
+                            <div class="heading4" style="color: rgb(28, 97, 224);">Total Comments</div>
+                            <div class="textcontainer">
+                                <div class="text4">{{total_comments}}</div>
+                            </div>
+                            <div class="emojie4"></div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="charts">
+
+                    <div class="pie">
+                        <div class="piecover">
+                            {%if piechart%}
+                            {%load static%}
+                            <img src="data:image/png;base64,{{piechart}}" alt="Pie Chart">
+                            {%endif%}
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="bar">
+                        <div class="barcover">
+                            {%if barchart%}
+                            {%load static%}
+                            <img src="data:image/png;base64,{{barchart}}" alt="Bar Chart">
+                            {%endif%}
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+
+
+        <div class="footer">
+
+
+            <section id="about">
+                <div class="aboutcon">
+                    <footer class="footer-distributed">
+                        <div class="footer-left">
+
+                            <h3><span></span></h3>
+
+                            <p class="footer-links">
+
+                                <a href="#dashboard" class="link-1">Dashboard</a>
+
+                                <a href="#analytics">Analytics</a>
+
+                                <a href="#about">About</a>
+                            </p>
+
+                            <p class="footer-company-name">SentimentHub 2024</p>
+                        </div>
+
+                        <div class="footer-center">
+
+                            <div>
+                                <i class="fa fa-map-marker"></i>
+                                <p><span>8J6JM26M+2V</span> Chakdara Dir Lower</p>
+                            </div>
+
+                            <div>
+                                <i class="fa fa-phone"></i>
+                                <p>03456987869</p>
+                            </div>
+
+                            <div>
+                                <i class="fa fa-envelope"></i>
+                                <p><a href="mailto:support@company.com">uzairwebd@gmail.com</a></p>
+                            </div>
+
+                        </div>
+
+                        <div class="footer-right">
+
+                            <p class="footer-company-about">
+                                <span>About the Website</span>
+                                Explore YouTube sentiment analysis powered by BERT and Django, boasting an 87%
+                                accuracy
+                                rate. Gain valuable insights into comment emotions effortlessly.
+                            </p>
+
+
+                        </div>
+
+                    </footer>
+
+
+                    <div class="sentiment-message" id="sentimentmessage" style="display: none;">Message: Button was
+                        clicked!
+                    </div>
+                    <div class="progressbarmessage" id="progressbarmessage" style="display: none;">Message: Button
+                        was
+                        clicked!
+                    </div>
+                </div>
+            </section>
+
+
+
+
+
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

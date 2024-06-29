@@ -1,0 +1,1064 @@
+body {
+    background-color: rgba(136, 139, 139, 0.521);
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: 0%;
+
+}
+
+
+
+
+
+
+
+
+
+
+.logingoogle img {
+  margin-right: 10px;
+  width: 30px;
+  height: 15px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.menuecontainer{
+    position: fixed;
+    height: auto;
+    width: 1080px; 
+}
+.menue{
+
+    height: auto; 
+    width: 100%;
+    display: flex;
+    background-color: #223D50;
+    color: #fff;
+
+}
+
+
+.logo{
+
+  width: 60px;
+  height: 30px;
+  margin-right: 12px;
+  padding-left: 12px;
+  left: 500px;
+  padding-top:12px ;
+  text-align: center;
+  background-image: url("sentiment.jpg"); /* Specify the path to your emoji image */
+  background-size: cover; /* Makes the image cover the entire div */
+  background-position: center; /* Centers the image within the div */
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+
+}
+.dashboard{
+  margin-left: 12px;
+  width: auto;
+  height: 30px;
+  padding-top:12px ;
+}
+
+.analytics{
+  margin-left: 12px;
+  width: auto;
+  height: 30px;
+  padding-top:12px ;
+}
+
+.about{
+  width: auto;
+  height: 30px;
+  padding-top:12px ;
+  margin-left: 12px
+
+}
+
+.signup{
+  width: auto;
+  height: 30px;
+  padding-top:12px ;
+  margin-left: 620px;
+  background: none;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  color: inherit;
+
+
+
+}
+
+.login{
+  margin-right: 40px;  
+  width: auto;
+  height: 30px;
+  padding-top:12px ;
+  margin-left: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  text-decoration: none;
+  color: inherit;
+
+  
+}
+
+.dashboard:hover,
+.analytics:hover,
+.about:hover,
+.contact:hover,
+.signup:hover,
+.login:hover
+{
+  background-color: #93969b;
+  cursor: default;
+}
+
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(239, 233, 233, 0.5);
+    backdrop-filter: blur(1px);
+}
+
+.signupcont, .logincont {
+    width: 300px;
+    height: 400px;
+    background-color: #ccc;
+    border: 1px solid black;
+    border-radius: 10px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+#signupCheckbox, #loginCheckbox {
+    display: none;
+}
+
+#signupCheckbox:checked ~ .signupcont,
+#signupCheckbox:checked ~ .overlay,
+#loginCheckbox:checked ~ .logincont,
+#loginCheckbox:checked ~ .overlay {
+    display: none;
+}
+
+.email, .password {
+    width: auto;
+    height: auto;
+    font-size: smaller;
+    color: #0e0d0d;
+}
+
+.email {
+    padding-right: 185px;
+}
+
+.password {
+    padding-right: 168px;
+}
+
+input[type="email"], input[type="password"] {
+    width: 200px;
+    padding: 13px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 10px;
+}
+
+.signupbutton, .signupgoogle, .loginbutton, .logingoogle {
+    height: 35px;
+    width: 229px;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-left: 25px;
+    margin-right: 23px;
+    background-color: #007BFF;
+}
+
+.signupgoogle, .logingoogle {
+    background-color: #ccc;
+    border: 1px solid black;
+}
+
+.signupgoogle:hover, .logingoogle:hover {
+    background-color: #bbb;
+
+}
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wholepage{
+    width: 1080px; /* Set a maximum width for larger screens */
+    min-height: 100vh; /* Set a minimum height to 100% of the viewport height */
+
+
+}
+.container {
+
+  max-width: 1250px; /* Set a reasonable maximum width */
+  height: 500px;
+  padding: 20px;
+  text-align: center;
+  border: 0px solid #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  background-color: #fff;
+  background-image: url("background.png"); /* Specify the path to your emoji image */
+  margin-bottom: 0px;
+  background-size: 100% ;
+  /* Set the background position to center */
+  background-position: right;
+  /* Set background repeat to no-repeat */
+  background-repeat: no-repeat;  
+  /* Add other styles as needed */
+  color: #0e0d0d; /* Example text color */
+  padding: 20px; /* Example padding */
+
+}
+.largeheading{
+  margin-top: 60px;
+  width: 400px;
+  height: auto;
+  text-align: left;
+  }
+  
+  .smallheading{
+    width: 400px;
+    height: auto;
+    text-align: left;  
+  }
+  
+
+
+
+.input-container {
+  width: 450px; /* Allow the container to expand to the available width */
+  margin-right: 1200px;
+  text-align: center;
+  margin-top: 30px;
+  display: flex; /* Use flexbox to make the children appear in one row */
+}
+.linkpasting{
+  width: 350px;
+  height: 50px;
+}
+
+input[type="text"] {
+  width: 100%; /* Allow the input field to expand to the available width */
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  height: 10px;
+}
+.performbutton{
+  height: 37px;
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-left: 25px;
+}
+
+button:hover {
+  margin-top: 2px;
+  background-color: #0056b3;
+}
+
+
+.progress-container {
+  width: 40%;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  width: 0;
+  height: 15px;
+  background-color: #2196f3;
+  border-radius: 15px;
+  animation: progress 5s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0% {
+      width: 0;
+  }
+  50% {
+      width: 100%;
+  }
+  100% {
+      width: 0;
+  }
+}
+
+
+.progress-container2 {
+  width: 40%;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar2 {
+  width: 0;
+  height: 15px;
+  background-color: #19921f;
+  border-radius: 15px;
+  animation: progress 5s ease-in-out infinite;
+}
+
+@keyframes progress {
+  0% {
+      width: 0;
+  }
+  50% {
+      width: 100%;
+  }
+  100% {
+      width: 0;
+  }
+}
+
+.mainmessages{
+  width: 410px;
+  height: 12px;
+  text-align: center;
+  margin-bottom: 5px;
+  padding-bottom: 15px;
+  font-size: small;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.container2 {
+    width: auto;
+    height: auto;
+    position: relative;
+    display: flex; /* Use flexbox to make the children appear in one row */
+    justify-content: space-between; /* Distribute the children evenly across the row */
+    margin-top: 0px;
+    padding-right: 100px;
+
+
+}    
+
+.commentsbutton{
+    padding: 2px 2px;
+    width: 90px;
+    height: 35px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+
+}
+
+
+.englishbutton{
+    margin-left: 20px;
+    padding: 2px 2px;
+    width: 120px;
+    height: 35px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+
+
+
+}
+.piebutton{
+    margin-left: 20px;
+    padding: 2px 2px;
+    width: 120px;
+    height: 35px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-right: 630px;
+    font-size: 13px;
+ 
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.all{
+  max-width: 1290px;
+  height: 700px;
+  background-color: #fffffff1;
+
+
+
+}
+.row {
+    display: flex; /* Use flexbox to make the children appear in one row */
+    justify-content: space-between; /* Distribute the children evenly across the row */
+    width: auto;
+    height: 150px;
+    padding-top: 50px;
+    overflow: hidden;
+    margin-right: 30px;
+    margin-left: 30px;
+
+
+
+}
+
+
+.green{
+    width: 240px;
+     height: 100px;
+     border: 1px solid #fff;
+     border-radius: 5px;
+    background-color: green;
+    float: right;
+}
+.positive{
+    width: 233px;
+    height: 100px;
+    border: 1px solid #fff;
+   border-radius: 5px 2px 2px 5px; 
+   background-color: #fff;
+   float: right;
+
+
+}
+
+
+
+.yellow{
+    width: 240px;
+     height: 100px;
+     border: 1px solid #fff;
+     border-radius: 5px;
+    background-color: rgb(241, 238, 25);
+    float: right;
+}
+.neutral{
+    width: 233px;
+    height: 100px;
+    border: 1px solid #fff;
+   border-radius: 5px 2px 2px 5px; 
+   background-color: #fff;
+   float: right;
+
+
+}
+
+
+.red{
+    width: 240px;
+     height: 100px;
+     border: 1px solid #fff;
+     border-radius: 5px;
+    background-color: rgb(235, 13, 31);
+    float: right;
+}
+.negetive{
+    width: 233px;
+    height: 100px;
+    border: 1px solid #fff;
+   border-radius: 5px 2px 2px 5px; 
+   background-color: #fff;
+   float: right;
+
+
+}
+
+
+
+.blue{
+    width: 240px;
+     height: 100px;
+     border: 1px solid #fff;
+     border-radius: 5px;
+    background-color: rgb(28, 97, 224);
+    float: right;
+}
+.total{
+    width: 233px;
+    height: 100px;
+    border: 1px solid #fff;
+   border-radius: 5px 2px 2px 5px; 
+   background-color: #fff;
+   float: right;
+
+
+}
+
+
+.heading1 {
+    font-family: Arial, sans-serif; /* Specify the font family */
+    font-size: 13px; /* Set the font size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Align the text to the center */
+    padding-top: 20px;
+    padding-right: 110px;
+}
+
+.emojie1{
+
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: -30px; /* Move 20 pixels down from its normal position */
+    right: -170px; /* Move 10 pixels left from its normal position */
+    background-image: url("newpositive.png"); /* Specify the path to your emoji image */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+
+
+.heading2 {
+    font-family: Arial, sans-serif; /* Specify the font family */
+    font-size: 13px; /* Set the font size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Align the text to the center */
+    padding-top: 20px;
+    padding-right: 110px;
+}
+
+.emojie2{
+
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: -30px; /* Move 20 pixels down from its normal position */
+    right: -170px; /* Move 10 pixels left from its normal position */
+    background-image: url("newneutral.png"); /* Specify the path to your emoji image */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+
+
+.heading3 {
+    font-family: Arial, sans-serif; /* Specify the font family */
+    font-size: 13px; /* Set the font size */
+    font-weight: bold; /* Make the text bold */
+    padding-top: 20px;
+    padding-right: 100px;
+
+}
+
+
+.emojie3{
+
+    width: 50px;
+    height: 50px;
+    position: relative;
+    top: -30px; /* Move 20 pixels down from its normal position */
+    right: -170px; /* Move 10 pixels left from its normal position */
+    background-image: url("newnegetive.jpg"); /* Specify the path to your emoji image */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+
+
+.heading4 {
+    font-family: Arial, sans-serif; /* Specify the font family */
+    font-size: 13px; /* Set the font size */
+    font-weight: bold; /* Make the text bold */
+    text-align: center; /* Align the text to the center */
+    padding-top: 20px;
+    padding-right: 130px;
+}
+
+
+
+.emojie4{
+
+    width: 80px;
+    height: 50px;
+    position: relative;
+    top: -30px; /* Move 20 pixels down from its normal position */
+    right: -140px; /* Move 10 pixels left from its normal position */
+    background-image: url("newtotal.png"); /* Specify the path to your emoji image */
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+
+}
+
+.textcontainer {
+    height: 20px;
+    width: 3px;
+
+
+}
+.text1 {
+    font-family: Arial, sans-serif; /* Specify the font family */
+    font-size: 17px; /* Set the font size */
+    font-weight: bold; /* Make the text bold */
+    height: 30px;
+    width: 30px;
+    padding-top: 12px;
+    padding-left: 16px;
+
+}
+.text2 {
+    font-family: Arial, sans-serif; /* Specify the font family */
+    font-size: 17px; /* Set the font size */
+    font-weight: bold; /* Make the text bold */
+    height: 30px;
+    width: 30px;
+    padding-top: 12px;
+    padding-left: 18px;
+
+}
+.text3 {
+    font-family: Arial, sans-serif; /* Specify the font family */
+    font-size: 17px; /* Set the font size */
+    font-weight: bold; /* Make the text bold */
+    height: 30px;
+    width: 30px;
+    padding-top: 12px;
+    padding-left: 11px;
+
+}
+.text4 {
+    font-family: Arial, sans-serif; /* Specify the font family */
+    font-size: 17px; /* Set the font size */
+    font-weight: bold; /* Make the text bold */
+    height: 30px;
+    width: 30px;
+    padding-top: 12px;
+    padding-left: 10px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  .charts{
+    width: auto;
+    height: 300px;
+    display: flex; /* Use flexbox to make the children appear in one row */
+
+  }
+  .piecover{
+    width: 350px;
+    height: 350px;
+    margin-left: 20px;
+    padding-bottom: 15px;
+    background-image: url("piechart.png"); /* Specify the path to your emoji image */
+    background-size: 121% ;
+    background-repeat: no-repeat;  
+  }
+
+  .pie{
+    width: 520px;
+    height: 430px;
+    margin-left: 30px;
+    border: 1px solid #fff;
+    background-color: #fff;
+
+  }    
+
+.barcover{
+
+    width: 300px;
+    height: 350px;
+    margin-left: 80px;
+    margin-top: 20px;
+    background-image: url("barchart.png"); /* Specify the path to your emoji image */
+    background-size: 110% ;
+    background-repeat: no-repeat;  
+} 
+    
+  .bar{
+    width: 520px;
+    height: 430px;
+    margin-left: 45px;
+    border: 1px solid #fff;
+    background-color: #fff;
+
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  .footer{
+    height: 300px;
+    width: 100%;
+    
+  }
+
+  .aboutcon{
+    background-color:rgba(0, 0, 0, 0.12);
+    display: flex;
+    max-width: 1290px;
+    justify-content: space-between;
+    border: 1px;
+    text-align: center;
+}
+
+.footer-distributed{
+    /* background: white; */
+    background-color: #223D50;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: bold 16px sans-serif;
+    padding: 55px 50px;
+  }
+  
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+    display: inline-block;
+    vertical-align: top;
+
+  }
+  
+  /* Footer left */
+  
+  .footer-distributed .footer-left{
+    width: 40%;
+ 
+  }
+  
+  /* The company logo */
+  
+  .footer-distributed h3{
+    background-image: url("sentiment.jpg"); /* Specify the path to your emoji image */
+    color: white;
+    font: normal 36px 'Open Sans', cursive;
+    margin: 0;
+    height: 150px;
+    width: 200px;
+    background-size: cover; /* Makes the image cover the entire div */
+    background-position: center; /* Centers the image within the div */
+    border-radius: 10px;
+    
+  }
+  
+  .footer-distributed h3 span{
+    color:  white;
+  }
+  
+  /* Footer links */
+  
+  .footer-distributed .footer-links{
+    color:  white;
+    margin: 20px 0 12px;
+    padding: 0;
+  }
+  
+  .footer-distributed .footer-links a{
+    display:inline-block;
+    line-height: 1.8;
+    font-weight:400;
+    text-decoration: none;
+    color:  inherit;
+  }
+  
+  .footer-distributed .footer-company-name{
+    color:  white;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+  }
+/* Footer Center */
+
+.footer-distributed .footer-center{
+    width: 35%;
+
+  }
+  
+  .footer-distributed .footer-center i{
+    background-color:  #33383b;
+    color: white;
+    font-size: 25px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 42px;
+    margin: 10px 15px;
+    vertical-align: middle;
+  }
+  
+  .footer-distributed .footer-center i.fa-envelope{
+    font-size: 17px;
+    line-height: 38px;
+  }
+  
+  .footer-distributed .footer-center p{
+    display: inline-block;
+    color: white;
+    font-weight:400;
+    vertical-align: middle;
+    margin:0;
+  }
+  
+  .footer-distributed .footer-center p span{
+    color: white;
+    display:block;
+    font-weight: normal;
+    font-size:14px;
+    line-height:2;
+  }
+  
+  .footer-distributed .footer-center p a{
+    color:  white;
+    text-decoration: none;;
+  }
+  
+  .footer-distributed .footer-links a:before {
+    content: "|";
+    font-weight:300;
+    font-size: 20px;
+    left: 0;
+    color: #ffffff0e;
+    display: inline-block;
+    padding-right: 5px;
+  }
+  
+  .footer-distributed .footer-links .link-1:before {
+    content: none;
+  }
+  
+  /* Footer Right */
+  
+  .footer-distributed .footer-right{
+    width: 20%;
+  }
+  
+  .footer-distributed .footer-company-about{
+    line-height: 20px;
+    color:  white;
+    font-size: 13px;
+    font-weight: normal;
+    margin: 0;
+  }
+  
+  .footer-distributed .footer-company-about span{
+    display: block;
+    color:  white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .footer-distributed .footer-icons{
+    margin-top: 25px;
+  }
+  
+  
+  /* If you don't want the footer to be responsive, remove these media queries */
+  
+  @media (max-width: 880px) {
+  
+    .footer-distributed{
+      font: bold 14px sans-serif;
+    }
+  
+    .footer-distributed .footer-left,
+    .footer-distributed .footer-center,
+    .footer-distributed .footer-right{
+      display: block;
+      width: 100%;
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  
+    .footer-distributed .footer-center i{
+      margin-left: 0;
+    }
+  
+  }  
+
+  .progressbarmessage {
+    display: none; /* Initially hidden */
+    height: auto; /* Adjust height as needed */
+    width: auto; /* Adjust width as needed */
+
+  }
+  .sentiment-message {
+    display: none;
+    height: auto;
+    width: auto;
+    color: #374c5bf3;
+    background-color: #374c5bf3;
+  }
+  
+  
+  
