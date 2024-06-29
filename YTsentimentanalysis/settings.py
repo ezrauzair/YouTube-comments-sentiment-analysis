@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-gch030-(7pz_fpvqn8st(j30mnfeg5m85pcyz4lqdl=53k*2jk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['YTsentimentanalysis.up.railway.app']
 
 
 # Application definition
