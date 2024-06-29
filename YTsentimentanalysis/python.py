@@ -62,7 +62,15 @@ def videolinkandlangdetect(request):
         request.session['all_comments'] = comments
         
         english_comments = []
-
+        access_key = 'AKIAYUU2OTE23ECPYRXD'
+        secret_key = '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'
+        region_name = 'us-east-1'
+        translate = boto3.client(
+        'comprehend',
+        aws_access_key_id=access_key,
+        aws_secret_access_key=secret_key,
+        region_name=region_name
+        )
         
 
         for i in comments:
