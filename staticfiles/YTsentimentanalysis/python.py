@@ -18,7 +18,7 @@ from django.contrib import messages
 
 
 def videolinkandlangdetect(request):
-    myapi = 'AIzaSyCT0mwFAAiIATCuEmrEMZlVwlFZ9FQIbfE'
+    myapi = 'You should put your own here'
     youtube = build('youtube', 'v3', developerKey=myapi)
 
     if "perform" in request.POST:
@@ -62,9 +62,9 @@ def videolinkandlangdetect(request):
         request.session['all_comments'] = comments
         
         english_comments = []
-        access_key = 'AKIAYUU2OTE23ECPYRXD'
-        secret_key = 'IwhBz5ftpe4LX8SCXB2bLvnKlxdWxTz2yPur9jTz'
-        region_name = 'us-east-1'
+        access_key = 'You should put your own here'
+        secret_key = 'You should put your own here'
+        region_name = 'You should put your own here'
         translate = boto3.client(
         'comprehend',
         aws_access_key_id=access_key,
